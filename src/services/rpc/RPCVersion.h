@@ -1,0 +1,46 @@
+//------------------------------------------------------------------------------
+/*
+	Copyright (c) 2012, 2013 Skywell Labs Inc.
+	Copyright (c) 2017-2018 TrueChain Foundation.
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose  with  or without fee is hereby granted, provided that the above
+    copyright notice and this permission notice appear in all copies.
+
+    THE  SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+    WITH  REGARD  TO  THIS  SOFTWARE  INCLUDING  ALL  IMPLIED  WARRANTIES  OF
+    MERCHANTABILITY  AND  FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+    ANY  SPECIAL ,  DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+    WHATSOEVER  RESULTING  FROM  LOSS  OF USE, DATA OR PROFITS, WHETHER IN AN
+    ACTION  OF  CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*/
+//==============================================================================
+
+#ifndef SKYWELLD_SKYWELL_RPC_VERSIONS_H
+#define SKYWELLD_SKYWELL_RPC_VERSIONS_H
+
+#include <beast/module/core/diagnostic/SemanticVersion.h>
+#include <protocol/JsonFields.h>
+#include <common/json/Object.h>
+
+namespace truechain {
+namespace RPC {
+
+extern beast::SemanticVersion const firstVersion;
+extern beast::SemanticVersion const goodVersion;
+extern beast::SemanticVersion const lastVersion;
+
+template <class Object>
+void setVersion(Object& parent)
+{
+    auto&& object = addObject (parent, jss::version);
+    object[jss::first] = firstVersion.print();
+    object[jss::good] = goodVersion.print();
+    object[jss::last] = lastVersion.print();
+}
+
+} // RPC
+} // truechain
+
+#endif
