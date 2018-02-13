@@ -2,7 +2,7 @@
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 
-NAME="truechaind"
+NAME="truechain"
 USER="truechaind"
 GROUP="truechaind"
 MAINPATH="$PWD/build"
