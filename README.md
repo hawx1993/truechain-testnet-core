@@ -44,7 +44,17 @@ to collaborate and share. This is achieved by a public-visible, initial smart co
 
 Our nestnet development team is and will be continously supported by members from Skywell Labs, Hyperledger and DoraHacks community.
 
-## Start ##
+## Development
 
-How to compile see doc/compile.md
+### Compile
 
+see `doc/compile.md`
+
+### Run
+
+See all options:
+
+```
+$ ./bin/truechainConsole
+Usage: ./bin/truechainConsole {start|stop|restart|status|fetch|uptime|command|test|chk}
+```

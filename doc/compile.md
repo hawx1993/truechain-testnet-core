@@ -34,6 +34,8 @@ get boost 1.58
 sudo apt-get install libboost1.58
 ```
 
+..or through http://www.boost.org/doc/libs/1_58_0/doc/html/bbv2/installation.html
+
 build install and
 ```
 export BOOST_ROOT=root dir of boost
@@ -45,30 +47,26 @@ export BOOST_ROOT=root dir of boost
 Download and extract (rename soci-x.y.z) to libs/soci https://sourceforge.net/projects/soci/files/
 
 ```
-sudo apt-get install -y libmysqlclient-dev libsqlite3-dev
+sudo apt-get install -y libmysqlclient-dev libsqlite3-dev libbz2-dev
 cd libs/soci
 mkdir build && cd build
 cmake ../
 make [-j8] && sudo make install
 ```
 
-You might have to change `/usr/local/include/soci/mysql/soci-mysql.h`
+You might have to change `/usr/local/include/soci/mysql/soci-mysql.h` otherwise `make` could fail in truechain build step.
 
 ```
 #include "soci-backend.h"
-
-to
-
+..to
 #include "../soci-backend.h"
 ```
 
-..and in
+..and in `/usr/local/include/soci/sqlite3/soci-sqlite3.h`
 
 ```
 #include "soci-backend.h"
-
-to
-
+..to
 #include "../soci-backend.h"
 ```
 

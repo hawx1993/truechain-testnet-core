@@ -2,14 +2,14 @@
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 
-NAME="skywelld"
-USER="skywelld"
-GROUP="skywelld"
-MAINPATH="/home/skywelld/skywelld/build"
+NAME="truechaind"
+USER="truechaind"
+GROUP="truechaind"
+MAINPATH="$PWD/build"
 
 PIDFILE=$MAINPATH/${NAME}.pid
-DAEMON=$MAINPATH/$NAME
-DAEMON_OPTS="--conf $MAINPATH/skywelld.cfg"
+DAEMON=$MAINPATH/bin/$NAME
+DAEMON_OPTS="--conf $MAINPATH/truechaind.cfg"
 NET_OPTS="-q --net $DAEMON_OPTS"
 
 do_start()
