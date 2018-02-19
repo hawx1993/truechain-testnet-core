@@ -13,6 +13,10 @@ fi
 
 if [ "$1" = 'truechaind' ]; then    
     cd $TC_HOME
+
+    groupadd truechaind
+    useradd truechaind -g truechaind
+
     ./bin/truechainConsole start
 fi
 
