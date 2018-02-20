@@ -1,0 +1,22 @@
+version: '2.2'
+
+services:
+  mysqldb:
+    image: mysql
+    restart: always
+    env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASS
+
+  peer:
+    restart: always
+    build:
+      context: .
+    env_file: .env
+    ports:
+     - 5020:5020
+    image: tcd:latest
+    depends_on:
+     - mysqldb
+    links:
+     - mysqldb

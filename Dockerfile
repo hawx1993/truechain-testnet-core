@@ -14,7 +14,7 @@ RUN \
   apt-get install -y cmake git g++ protobuf-compiler python-dev \
           libprotobuf-dev libssl-dev liblz4-dev zlib1g-dev \
           libmysqlclient-dev libsqlite3-dev libbz2-dev \
-          libsnappy-dev zlib1g-dev && \
+          libsnappy-dev zlib1g-dev mysql-client && \
   rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /opt/truechain
@@ -56,8 +56,8 @@ ENV BOOST_ROOT=/usr/local/lib/
 RUN cd $TC_HOME/build && cmake .. && make -j4
 
 COPY docs/truechaind.cfg.sample $TC_HOME/build/truechaind.cfg
-
 COPY docker-entrypoint.sh /
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["truechaind"]
