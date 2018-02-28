@@ -2,7 +2,9 @@
 
 ![](images/truechainlogo_white_background.png)
 
-## TrueChain: The Next Generation Public Blockchain for Real Commercial Applications
+## TrueChain
+
+初恋：The Next Generation Public Blockchain for Real Commercial Applications
 
 This repo is TrueChain PBFT testnet.
 
