@@ -1,7 +1,8 @@
-# truechain-testnet-core
+# TrueChain-Testnet-Core
 
-![](images/truechain.png)
-##TrueChain 初链: The Next Generation Public Blockchain for Real Commercial Applications
+![](images/truechainlogo_white_background.png)
+
+## TrueChain: The Next Generation Public Blockchain for Real Commercial Applications
 
 This repo is TrueChain PBFT testnet.
 
@@ -43,7 +44,7 @@ Step 1: Install `docker-compose`
 
 Step 2: Copy `env.example` to `.env` in same folder. Then, build and run:
 
-```
+```bash
 $  docker-compose up --build -d
 ```
 
@@ -51,13 +52,13 @@ Step 3: See if the test page is accessible at `<your docker host IP>:5020` (as t
 
 Check peer logs for debugging. They should look like:
 
-```
+```bash
 $ docker-compose logs peer 
 ```
 
 ..which should be something like:
 
-```
+```bash
 Attaching to truechaintestnetcore_peer_1
 peer_1     | ERROR 2003 (HY000): Can't connect to MySQL server on 'mysqldb' (111)
 peer_1     | Can't connect to mysqldb, retrying after 5 seconds..
